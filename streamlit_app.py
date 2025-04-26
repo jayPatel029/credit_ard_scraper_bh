@@ -9,7 +9,7 @@ logger = logging.getLogger(__name__)
 def isUrl(source: str) -> bool:
     return source.startswith("http://") or source.startswith("https://")
 
-def run_scraper_from_text(source: str, progress = None):
+def scrape_text_data(source: str, progress = None):
     
     def show_progress(curr, total):
         if progress:
@@ -50,14 +50,13 @@ def main():
     if source:
         progress_text = st.empty()
         with st.spinner("Scraping in progress... please wait"):
-            cards = run_scraper_from_text(source, progress=progress_text)
+            cards = scrape_text_data(source, progress=progress_text)
 
         if cards:
             st.success(f"Found {len(cards)} cards.")
             st.json(cards)
         else:
             st.warning("No cards found or invalid source.")
-
     st.markdown("----")
     st.header("Option 2: Upload PDF file")
     uploaded_pdf = st.file_uploader("Upload a PDF file", type=["pdf"])
