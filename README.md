@@ -149,12 +149,11 @@ Here are the key files and folders to understand the project structure:
 
 ## 🛠️ Project Tech Stack
 
-- **Python 3.10+**
+- **Python 3.13**
 - **Streamlit** (Frontend App)
 - **Groq API** (Backend LLM - LLaMA 3 Model)
-- **PyMuPDF / pdfminer / pypdf** (for PDF reading)
+- **PyMuPDF** (for PDF reading)
 - **BeautifulSoup** (for Web scraping)
-- **Jina Reader** (for extracting and normalizing web page content)
 - **uv** (for Dependency Management)
 
 ---
